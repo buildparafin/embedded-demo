@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+
+import Login from "./components/Login";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Dashboard from "./components/Dashboard";
+import { UserContext } from "./components/UserProvider";
+
 
 function App() {
+  const { username } = useContext(UserContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      {username ? (
+        <div>
+          <Dashboard />
+        </div>
+      ) : (
+        <Login />
+      )}      
+      <Footer />
     </div>
   );
 }
