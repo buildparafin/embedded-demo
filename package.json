@@ -6,16 +6,16 @@
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@parafin/react-parafin-elements": "2.4.3",
     "axios": "^1.2.3",
+    "bootstrap": "^5.2.3",
     "chart.js": "^4.1.1",
     "concurrently": "^7.6.0",
     "express-session": "^1.17.3",
-    "mdb-react-ui-kit": "^5.1.0",
     "nodemon": "^2.0.20",
-    "react": "^18.2.0",
+    "react": "17.0.2",
     "react-chartjs-2": "^5.1.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "17.0.2",
     "react-router-dom": "^6.5.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,6 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "react-error-overlay": "6.0.9"
   },
   "proxy": "http://localhost:8080"
 }

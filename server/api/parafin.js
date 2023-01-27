@@ -15,7 +15,7 @@ const EXT_BUSINESS_ID = "7ce6f582-950a-46d9-ae5a-339f72daf7d4|34e69d83-38a6-4aa2
 router.post("/token", async (req, res) => {
     const url = `${PARAFIN_BASE_URL}/auth/tokens`
     const data = {
-      external_business_id: EXT_BUSINESS_ID
+      external_business_id: "MattsCerealShack"
     }
     const config = {
       auth: {
@@ -35,7 +35,6 @@ router.post("/token", async (req, res) => {
   
     res.send({
       authToken: result.data.bearer_token
-    // authToken: ""
     });
   });
 
