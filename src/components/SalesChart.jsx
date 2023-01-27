@@ -1,12 +1,13 @@
 // ./components/BarChart.js
 
 import React from "react";
-import Chart from "chart.js/auto";
-import { Bar } from "react-chartjs-2";
+import { Chart } from 'react-chartjs-2';
 
 const SalesChart = () => {
   const labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var options = {
+    maintainAspectRatio: false,
+    barPercentage: .5,
     plugins: {
       legend: {
         display: false
@@ -34,13 +35,13 @@ const SalesChart = () => {
       {
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
-        data: [0, 10, 5, 2, 20, 30, 33, 30, 40, 44, 46, 45, 44]
+        data: [3, 10, 5, 8, 20, 30, 33, 30, 40, 44, 46, 49]
       },
     ]
   };
   return (
-    <div style={{width: "100%"}}>
-      <Bar data={data} options={options} />
+    <div style={{height: "250px"}} className="pb-5">
+      <Chart type='bar' data={data} options={options} />
     </div>
   );
 };

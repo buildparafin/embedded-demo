@@ -4,7 +4,7 @@ import React, { useContext, useState } from 'react';
 // import {MDBContainer, MDBCol, MDBBtn} from 'mdb-react-ui-kit';
 
 import { UserContext } from './UserProvider';
-// import SalesChart from './SalesChart';
+import SalesChart from './SalesChart';
 import ParafinElementContainer from "./ParafinElementContainer"
 
 
@@ -27,6 +27,7 @@ function Dashboard() {
           <ParafinElementContainer />
 
           <h5 className='mt-5'>Daily Sales</h5>
+          <SalesChart />
         </div>
       </div>
 

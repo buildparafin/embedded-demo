@@ -11,3 +11,19 @@ footer {
   bottom: 0;  */
   width: 100%;
 }
+
+a {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #3b71ca;
+}
+
+.btn-primary:hover {
+  background-color:#386bc0
+}
+
+.bg-primary {
+  background-color: #3b71ca !important;
+}

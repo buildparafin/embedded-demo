@@ -29,11 +29,16 @@ function ParafinElementContainer() {
 
   return (
     <div>
-      {parafinToken && (
+
+      {parafinToken ? (
         <ParafinElements
           token={parafinToken}
           environment="development"
         />
+      ) : (
+        <div class="spinner-border mt-3" role="status">
+          <span class="sr-only"></span>
+        </div>
       )}
     </div>
   )  
