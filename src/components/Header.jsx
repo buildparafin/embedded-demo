@@ -15,15 +15,15 @@ import {
   MDBDropdownItem,
   MDBCollapse,
 } from 'mdb-react-ui-kit';
-import { UserContext } from './UserProvider';
+// import { UserContext } from './UserProvider';
 
 function Header() {
   const [showBasic, setShowBasic] = useState(false);
-  const {username, logout} = useContext(UserContext);
+  // const {username, logout} = useContext(UserContext);
 
   return (
     <MDBNavbar expand='lg' dark bgColor='primary'>
-      <MDBContainer >
+      <MDBContainer>
         <MDBNavbarBrand href='#'>Brand</MDBNavbarBrand>
 
         <MDBNavbarToggler
@@ -35,7 +35,9 @@ function Header() {
           <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
 
-        {username && (
+        {/* only include if you build in user auth / login support */}
+        {/* {username && ( */}
+
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>            
               <MDBNavbarItem>
@@ -70,13 +72,14 @@ function Header() {
 
 
               <MDBNavbarItem className="ms-auto">
-                <MDBNavbarLink active href='#' onClick={logout} tabIndex={-1}>
+                {/* <MDBNavbarLink active href='#' onClick={logout} tabIndex={-1}> */}
+                <MDBNavbarLink active href='#' tabIndex={-1}>
                   Logout
                 </MDBNavbarLink>
               </MDBNavbarItem>              
             </MDBNavbarNav>
           </MDBCollapse>
-        )}
+        {/* )} */}
       </MDBContainer>
     </MDBNavbar>
   );

@@ -5,6 +5,7 @@ const app = express()
 require('dotenv').config();
 
 const user = require('./api/user')
+const parafin = require('./api/parafin')
 
 // middleware
 app.use(
@@ -23,6 +24,7 @@ app.use(session({
 
 // API endpoints
 app.use('/api/user', user)
+app.use('/api/parafin', parafin)
 
 // Starting Server
 app.listen(process.env.PORT || 8080, () => {

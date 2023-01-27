@@ -6,13 +6,15 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import './index.css';
 import App from './App';
 
-import UserProvider from './components/UserProvider';
+// import UserProvider from './components/UserProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <UserProvider>
+  // <React.StrictMode>
+    // <UserProvider>
+    // <React>
       <App />
-    </UserProvider>    
-  </React.StrictMode>
+    // </React>      
+    // </UserProvider>    
+  // </React.StrictMode>
 );
