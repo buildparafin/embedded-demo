@@ -43,7 +43,7 @@ In order to display an embedded offer to a business with Parafin Elements, you f
 > Make sure you update the `client_id` and `client_secret` in the curl request with your respective keys. If you end up changing the `business_external_id` value, don't forget to update the [`businessId` variable](https://github.com/mattmitchell6/parafin-elements-quickstart/blob/c1cd49696876da1c5abcd3956369c3c204d62d61/src/App.js#L21) found in the project's App.js file. 
 
 ```bash
-curl -XPOST  https://api.dev.parafin.com/business \
+$ curl -XPOST  https://api.dev.parafin.com/business \
   -u client_id:client_secret \
   -d '{"business_external_id": "yourBusinessId"}' 
 ```
