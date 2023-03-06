@@ -3,16 +3,14 @@
 [Parafin Elements](https://docs.parafin.com/elements/overview) is a React component library that allows you to embed Parafin's capital experience directly within your app. Get up and running in minutes with this quickstart guide. 
 
 
-![Elements preview](/img/elements-preview.png)
+![Elements preview](/img/elements-preview.gif)
 
 ## Prerequisites 
----
 * Access to a [Parafin dashboard](https://dashboard.parafin.com)
 * [Node.js](https://nodejs.org/en/)
 
 
 ## Instructions
----
 
 ### 1. Clone repo
 First, clone the quickstart repository and install dependencies:
@@ -23,7 +21,7 @@ $ cd parafin-elements-quickstart
 $ npm install
 ```
 
-### 2. Fetch and update API keys
+### 2. Fetch and include API keys
 Next, Navigate to the [Settings > API keys](https://dashboard.parafin.com/settings/api-keys) in your Parafin dashboard and fetch your sandbox Client ID and Client secret.
 
 Rename the `sample.env` file to `.env` and populate with your Client ID and Client secret.
@@ -42,7 +40,7 @@ PARAFIN_CLIENT_SECRET="<your-client-secret>"
 In order to display an embedded offer to a business with Parafin Elements, you first need to create a business. Create a new test business with a pre-approved offer using the curl command below.
 
 > ⚠️ Heads up! <br/>
-> Make sure you update the `client_id` and `client_secret` in the curl request with your respective keys. Also, if you end up changing the `business_external_id` value, don't forget to update the `businessId` variable found in the project's App.js file. 
+> Make sure you update the `client_id` and `client_secret` in the curl request with your respective keys. If you end up changing the `business_external_id` value, don't forget to update the [`businessId` variable](https://github.com/mattmitchell6/parafin-elements-quickstart/blob/c1cd49696876da1c5abcd3956369c3c204d62d61/src/App.js#L21) found in the project's App.js file. 
 
 ```bash
 curl -XPOST  https://api.dev.parafin.com/business \

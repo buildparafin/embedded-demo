@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const fetchToken = async () => {
       
-    /** Note: You must grab a business Id to pass to the /parafin/token endpoint
+    /** Note: You must grab a business Id to pass to the "/parafin/token" endpoint
         If you don't have a business yet, create a new test business with
         the curl command below.
 
