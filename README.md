@@ -1,36 +1,62 @@
-# Parafin ElementsQuickstart
+# Parafin Elements Quickstart
 
-Get up and running quickly with Parafin Elements. this is meant to create elements in test mode. 
-link to docs? 
+[Parafin Elements](https://docs.parafin.com/elements/overview) is a React component library that allows you to embed Parafin's capital experience directly within your app. Get up and running in minutes with this quickstart guide. 
 
-[image of what it looks like]
+
+![Elements preview](/img/elements-preview.png)
 
 ## Prerequisites 
-* Access to the Parafin dashboard
-* The quickstart assumes you have NodeJS (v16.14.2+) and npm already installed.
-* node / npm
-* react
+---
+* Access to a [Parafin dashboard](https://dashboard.parafin.com)
+* [Node.js](https://nodejs.org/en/)
 
-* get your client id and secret
-* rename `sample.env` to `.env` and add your client ID and client secret
 
-## Getting Started
+## Instructions
+---
 
-### Install packages
+### 1. Clone repo
+First, clone the quickstart repository and install dependencies:
 
-### Create a new business
-paste into the app.js file
+```bash
+$ git clone https://github.com/mattmitchell6/parafin-elements-quickstart.git
+$ cd parafin-elements-quickstart
+$ npm install
+```
 
-### Run the app and checkout your test offer!
+### 2. Fetch and update API keys
+Next, Navigate to the [Settings > API keys](https://dashboard.parafin.com/settings/api-keys) in your Parafin dashboard and fetch your sandbox Client ID and Client secret.
 
-## Available Scripts
+Rename the `sample.env` file to `.env` and populate with your Client ID and Client secret.
 
-In the project directory, you can run:
+```bash
+$ mv sample.env .env
+```
 
-### `npm start`
+```bash
+# .env
+PARAFIN_CLIENT_ID="<your-client-id>"
+PARAFIN_CLIENT_SECRET="<your-client-secret>"
+```
 
-Runs the app in the development mode.\
+### 3. Create a test business
+In order to display an embedded offer to a business with Parafin Elements, you first need to create a business. Create a new test business with a pre-approved offer using the curl command below.
+
+> ⚠️ Heads up! <br/>
+> Make sure you update the `client_id` and `client_secret` in the curl request with your respective keys. Also, if you end up changing the `business_external_id` value, don't forget to update the `businessId` variable found in the project's App.js file. 
+
+```bash
+curl -XPOST  https://api.dev.parafin.com/business \
+  -u client_id:client_secret \
+  -d '{"business_external_id": "yourBusinessId"}' 
+```
+
+### 4. Run the app
+You're now ready to run the app and check out your embedded offer!
+
+In the project directory, run:
+
+```bash
+$ npm run dev
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.

@@ -1,7 +1,7 @@
 {
   "name": "parafin-quickstart",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@parafin/react-parafin-elements": "2.4.3",
     "axios": "^1.2.3",
