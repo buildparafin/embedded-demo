@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from 'axios'
-import { ParafinElements } from "@parafin/react-parafin-elements";
+import { ParafinElements, ParafinButton } from "@parafin/react-parafin-elements";
 
 
 function App() {
   const [token, setToken] = useState(null)
+  const [state, setState] = useState(null)
 
   useEffect(() => {
     const fetchToken = async () => {
@@ -18,7 +19,7 @@ function App() {
           -d '{"business_external_id": "yourBusinessId"}'           
      *
      **/
-      const businessId = "yourBusinessId"
+      const businessId = "123456789"
       
       // fetch Parafin token from server
       const response = await axios.get(`/parafin/token/${businessId}`) 
@@ -30,18 +31,29 @@ function App() {
     }    
   })
 
+  const onExit = (state) => {
+    console.log(state);
+    setState(state)
+    alert(state)
+  }
+
   return (
     <div style={{width: "600px"}}>
       <h1>Parafin Elements Quickstart</h1>
       {token ? (
-        <ParafinElements
-          token={token}
-          environment="development"
-          style={{
-            accent: "#3b71ca",
-            borderRadius: "8px",
-          }}
-        />
+        <div>
+          <ParafinElements
+            product="merchant_cash_advance"
+            token={token}
+            environment="development"
+          />
+
+          <ParafinButton token={token} environment="development" onExit={setState} 
+            style={{
+              backgroundColor: "#000000"
+            }}
+          />                 
+        </div> 
       ) : (
         <div>
           loading...
@@ -52,3 +64,15 @@ function App() {
 }
 
 export default App;
+
+
+// curl https://api.dev.parafin.com/business \
+//   -u 9192abaf-47be-4187-8d08-5d4fd9261fa3:tAAVUyyKgoBg7ENdd4fhwUnoMASAkZdVuJBdfE0chi3XyPXjKbvFx9dvdruKKfCx \
+//   -d '{
+//     "business_external_id": "123456789"
+//   }' 
+
+
+
+
+
