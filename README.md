@@ -16,8 +16,8 @@
 First, clone the quickstart repository and install dependencies:
 
 ```bash
-$ git clone https://github.com/mattmitchell6/parafin-elements-quickstart.git
-$ cd parafin-elements-quickstart
+$ git clone https://github.com/buildparafin/parafin-elements-flex-quickstart.git
+$ cd parafin-elements-flex-quickstart
 $ npm install
 ```
 
@@ -45,7 +45,10 @@ In order to display an embedded offer to a business with Parafin Elements, you f
 ```bash
 $ curl -XPOST  https://api.dev.parafin.com/business \
   -u client_id:client_secret \
-  -d '{"business_external_id": "yourBusinessId"}' 
+  -d '{
+    "business_external_id": "yourBusinessId",
+    "product_type": "flex_loan"
+  }' 
 ```
 
 ### 4. Run the app

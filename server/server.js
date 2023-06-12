@@ -16,8 +16,7 @@ app.use(session({
   saveUninitialized: true
 }))
 
-const PARAFIN_BASE_URL =
-  process.env.EVIRONMENT === 'production' ? 'https://api.parafin.com' : 'https://api.dev.parafin.com'
+const PARAFIN_BASE_URL = 'https://api.parafin.com'
 
 // route for fetching Parafin token
 app.get("/parafin/token/:id", async (req, res) => {
