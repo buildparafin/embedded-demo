@@ -27,7 +27,7 @@ function App() {
           }'                 
      *
      **/
-      const businessId = "mikesCerealShack21"
+      const businessId = "mikesCerealShack"
       
       // fetch Parafin token from server
       const response = await axios.get(`/parafin/token/${businessId}`) 
@@ -45,7 +45,7 @@ function App() {
       {token ? (
         <div>
           <ParafinElements
-            product="flex_loan"            
+            product="capital"            
             environment="production"
             token={token}
           />              
