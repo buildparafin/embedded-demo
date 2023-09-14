@@ -36,20 +36,14 @@ PARAFIN_CLIENT_ID="<your-client-id>"
 PARAFIN_CLIENT_SECRET="<your-client-secret>"
 ```
 
-### 3. Create a test business
-In order to display an embedded offer to a business with Parafin Elements, you first need to create a business. Create a new test business with a pre-approved offer using the curl command below.
+### 3. Create a pre-approved offer
+There are a few requirements before you can display a pre-approved offer with Parafin Elements:
 
-> ⚠️ Heads up! <br/>
-> Make sure you update the `client_id` and `client_secret` in the curl request with your respective keys. If you end up changing the `business_external_id` value, don't forget to update the [`businessId`](https://github.com/mattmitchell6/parafin-elements-quickstart/blob/c1cd49696876da1c5abcd3956369c3c204d62d61/src/App.js#L21) variable found in the project's App.js file. 
+* Create a [Business](https://docs.parafin.com/share-data/methods/api#2-create-a-business), [Person](https://docs.parafin.com/share-data/methods/api#3-create-a-person), and [Bank Account](https://docs.parafin.com/share-data/methods/api#4-create-a-bank-account)
+* [Generate a Capital Product Offer](https://docs.parafin.com/api#tag/Sandbox/operation/Generate%20Capital%20Product%20Offer) for the newly created Business
+* Replace the `personId` in the `App.js` file with the ID from your newly created Person (`person_xxx`)
 
-```bash
-$ curl -XPOST  https://api.dev.parafin.com/business \
-  -u client_id:client_secret \
-  -d '{
-    "business_external_id": "yourBusinessId",
-    "product_type": "flex_loan"
-  }' 
-```
+See [our documentation](https://docs.parafin.com/present-offers/elements/#2-create-a-business-and-person) for more detailed information on how to create a pre-approved offer.
 
 ### 4. Run the app
 You're now ready to run the app and check out your embedded offer!
