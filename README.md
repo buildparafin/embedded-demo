@@ -43,7 +43,9 @@ There are a few requirements before you can display a pre-approved offer with Pa
 * [Generate a Capital Product Offer](https://docs.parafin.com/api#tag/Sandbox/operation/Generate%20Capital%20Product%20Offer) for the newly created Business
 * Replace the `personId` in the `App.js` file with the ID from your newly created Person (`person_xxx`)
 
+
 See [our documentation](https://docs.parafin.com/present-offers/elements/#2-create-a-business-and-person) for more detailed information on how to create a pre-approved offer.
+
 
 ### 4. Run the app
 You're now ready to run the app and check out your embedded offer!
