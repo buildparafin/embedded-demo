@@ -10,28 +10,12 @@ function App() {
   useEffect(() => {
     const fetchToken = async () => {
       
-    /** Note: You must grab a business Id to pass to the "/parafin/token" endpoint
-        If you don't have a business yet, create a new test business with
-        the curl command below.
-    
-        curl -XPOST  https://api.parafin.com/business \
-          -u you_client_id:you_client_secret \
-          -d '{ 
-            "business_external_id": "mikesCerealShack", 
-            "product_type": "flex_loan",
-            "owner_first_name": "Michael",
-            "owner_last_name": "Scott",
-            "legal_business_name": "Mikes Cereal Shack llc",
-            "dba_name": "Mikes Cereal Shack",
-            "email": "mikescott@test.com"         
-          }'                 
-     *
-     **/
-      const businessId = "mikesCerealShack"
+      // replace with your own Person ID
+      const personId = "<your-person-id>" 
       
       // fetch Parafin token from server
-      const response = await axios.get(`/parafin/token/${businessId}`) 
-      setToken(response.data.token)
+      const response = await axios.get(`/parafin/token/${personId}`) 
+      setToken(response.data.parafinToken)
     }
 
     if(!token) {

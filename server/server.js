@@ -16,17 +16,18 @@ app.use(session({
   saveUninitialized: true
 }))
 
-const PARAFIN_BASE_URL = 'https://api.parafin.com'
+const PARAFIN_BASE_URL = 'https://api.parafin.com/v1'
 
 // route for fetching Parafin token
 app.get("/parafin/token/:id", async (req, res) => {
-  const url = `${PARAFIN_BASE_URL}/auth/tokens`
-  const businessId = req.params.id;
+  const url = `${PARAFIN_BASE_URL}/auth/redeem_token`
+  const personId = req.params.id;
+  console.log(personId);
   let token;
   let error;
   
   const data = {
-    external_business_id: businessId
+    person_id: personId
   }
   
   const config = {
@@ -39,13 +40,13 @@ app.get("/parafin/token/:id", async (req, res) => {
   try {
     // make call to fetch Parafin token for business
     const result = await axios.post(url, data, config)
-    token = result.data.bearer_token;
+    parafinToken = result.data.bearer_token;
   
     res.send({
-      token: token
+      parafinToken: parafinToken
     })
   } catch(error) {
-    console.log(error);
+    console.log(error.response.data);
     res.send({
       errorCode: error.response.status,
       message: error.response.data
