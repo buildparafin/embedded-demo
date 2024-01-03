@@ -37,7 +37,7 @@ PARAFIN_CLIENT_SECRET="<your-client-secret>"
 ```
 
 ### 3. Create a test offer
-To display an embedded offer to a business with Parafin Elements, you need to first [create a sandbox business and person with a pre-approved offer](https://docs.parafin.com/present-offers/elements/#2-create-a-business-and-person). Update the `personId` variable in the App.js file with your newly created person.
+To display an embedded offer to a business with Parafin Elements, you need to first [create a sandbox business and person with a pre-approved offer](https://docs.parafin.com/present-offers/elements/#2-create-a-business-and-person). Update the `personId` [variable in the App.js](https://github.com/buildparafin/parafin-elements-flex-quickstart/blob/42ca76a590d9145725b4931e46da6b41aa1cff0c/src/App.js#L14) file with your newly created person.
 
 
 ### 4. Run the app
