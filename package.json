@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "dependencies": {
-    "@parafin/react-parafin-elements": "^2.4.5",
+    "@parafin/react-parafin-elements": "^2.5.7",
     "axios": "^1.2.3",
     "concurrently": "^7.6.0",
     "express-session": "^1.17.3",
