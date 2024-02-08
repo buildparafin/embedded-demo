@@ -46,7 +46,6 @@ There are a few requirements before you can display a pre-approved offer with Pa
 
 See [our documentation](https://docs.parafin.com/capital/present-offers/elements/#2-create-a-business-and-person) for more detailed information on how to create a pre-approved offer.
 
-
 ### 4. Run the app
 You're now ready to run the app and check out your embedded offer!
 
@@ -56,4 +55,4 @@ In the project directory, run:
 $ npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view the app with embedded Parafin elements in your browser.
