@@ -8,8 +8,9 @@ function App() {
 
   useEffect(() => {
     const fetchToken = async () => {
-      // Replace with your own Person ID
-      const personId = "person_f67e5abe-acc8-4900-b499-763c519723ef";
+      // Replace with your own Person ID. It should begin with "person_".
+      const personId = "<your-person-id>";
+
       // Change to false to use production or sandbox production environment
       const isDevEnvironment = true;
 
