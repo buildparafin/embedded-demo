@@ -71,7 +71,7 @@ function App() {
           />
           <ParafinWidget
             token={token}
-            product="banking"
+            product="wallet"
             // Optional props below, see docs.parafin.com for more information
             externalBusinessId={undefined}
             onOptIn={onOptIn}
