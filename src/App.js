@@ -2,17 +2,20 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { ParafinWidget } from "@parafin/react";
+import { Header } from "./components/Header.tsx";
+import { SideNav } from "./components/SideNav.tsx";
 
 function App() {
   const [token, setToken] = useState(null);
+  const [tab, setTab] = useState("capital");
 
   useEffect(() => {
+    // Change to false to use production or sandbox production environment
+    const isDevEnvironment = true;
+
     const fetchToken = async () => {
       // Replace with your own Person ID. It should begin with "person_".
       const personId = "<your-person-id>";
-
-      // Change to false to use production or sandbox production environment
-      const isDevEnvironment = true;
 
       // Fetch Parafin token from server
       const response = await axios.get(
@@ -52,58 +55,60 @@ function App() {
     },
   });
 
+  if (!token) {
+    return <LoadingShell>loading...</LoadingShell>;
+  }
+
   return (
     <div>
-      <Header>
-        <h1>Parafin Widget Quickstart</h1>
-      </Header>
-      {token ? (
-        <WidgetContainer>
-          <ParafinWidget
-            token={token}
-            product="capital"
-            // Optional props below, see docs.parafin.com for more information
-            externalBusinessId={undefined}
-            onOptIn={onOptIn}
-            // For demo purposes only. Do not use in your integration.
-            widgetUrlOverride="https://embedded-demo-widget.vercel.app"
-            dashboardUrlOverride="https://embedded-demo-app.vercel.app"
-          />
-          <ParafinWidget
-            token={token}
-            product="wallet"
-            // Optional props below, see docs.parafin.com for more information
-            externalBusinessId={undefined}
-            onOptIn={onOptIn}
-            // For demo purposes only. Do not use in your integration.
-            widgetUrlOverride="https://embedded-demo-widget.vercel.app"
-            dashboardUrlOverride="https://embedded-demo-app.vercel.app"
-          />
-        </WidgetContainer>
-      ) : (
-        <Shell>loading...</Shell>
-      )}
+      <Header />
+      <ContentShell>
+        <SideNav onClick={(newProduct) => setTab(newProduct)} />
+        {tab === "capital" && (
+          <PageShell>
+            <ParafinWidget
+              token={token}
+              product="capital"
+              // Optional props below, see docs.parafin.com for more information
+              externalBusinessId={undefined}
+              onOptIn={onOptIn}
+              // For demo purposes only. Do not use in your integration.
+              widgetUrlOverride="https://embedded-demo-widget.vercel.app"
+              dashboardUrlOverride="https://embedded-demo-app.vercel.app"
+            />
+          </PageShell>
+        )}
+        {tab === "analytics" && (
+          <PageShell>
+            <h2>Analytics</h2>
+          </PageShell>
+        )}
+        {tab === "payouts" && (
+          <PageShell>
+            <h2>Payouts</h2>
+          </PageShell>
+        )}
+      </ContentShell>
     </div>
   );
 }
 
 export default App;
 
-const Header = styled.div`
-  height: 120px;
-  background-color: white;
+const ContentShell = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: row;
+`;
+
+const LoadingShell = styled.div`
   padding: 20px;
 `;
 
-const Shell = styled.div`
-  padding: 20px;
-`;
-
-const WidgetContainer = styled.div`
+const PageShell = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   padding: 20px;
   gap: 40px;
+  max-width: 1100px;
 `;
