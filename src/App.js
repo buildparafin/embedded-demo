@@ -78,6 +78,20 @@ function App() {
             />
           </PageShell>
         )}
+        {tab === "wallet" && (
+          <PageShell>
+            <ParafinWidget
+              token={token}
+              product="wallet"
+              // Optional props below, see docs.parafin.com for more information
+              externalBusinessId={undefined}
+              onOptIn={onOptIn}
+              // For demo purposes only. Do not use in your integration.
+              widgetUrlOverride="https://embedded-demo-widget.vercel.app"
+              dashboardUrlOverride="https://embedded-demo-app.vercel.app"
+            />
+          </PageShell>
+        )}
         {tab === "analytics" && (
           <PageShell>
             <h2>Analytics</h2>
