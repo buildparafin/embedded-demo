@@ -9,7 +9,6 @@ export const SideNav = ({ onClick }) => {
         <StyledNavItem onClick={() => onClick("capital")}>
           Capital
         </StyledNavItem>
-        <StyledNavItem onClick={() => onClick("wallet")}>Wallet</StyledNavItem>
         <StyledNavItem onClick={() => onClick("analytics")}>
           Analytics
         </StyledNavItem>
