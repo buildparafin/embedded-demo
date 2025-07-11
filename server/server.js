@@ -41,6 +41,9 @@ app.get("/parafin/token/:id/:isDev?", async (req, res) => {
     },
   };
 
+  console.log("data: ",data)
+  console.log("config: ", config)
+  console.log("url: ", url)
   try {
     // make call to fetch Parafin token for business
     const result = await axios.post(url, data, config);
